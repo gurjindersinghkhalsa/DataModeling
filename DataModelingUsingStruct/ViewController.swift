@@ -21,16 +21,16 @@ class ViewController: UIViewController {
                     stackView.distribution = .fillEqually
                     
                     let lblId = UILabel.init(frame: CGRect.init(x: 12, y: 10, width: width - 24, height: 30))
-                    lblId.text = "Id = \(String(describing: firObj.id))"
+                    lblId.text = "Id = \(String(describing: firObj.id ?? 0))"
                     
                     let lblTitle = UILabel.init(frame: CGRect.init(x: 12, y: 40, width: width - 24, height: 30))
-                    lblTitle.text = "Title = \(String(describing: firObj.title))"
+                    lblTitle.text = "Title = \(String(describing: firObj.title ?? ""))"
                     
                     let lblEpisodeNo = UILabel.init(frame: CGRect.init(x: 12, y: 40, width: width - 24, height: 30))
-                    lblEpisodeNo.text = "Episode = \(String(describing: firObj.episode))"
+                    lblEpisodeNo.text = "Episode = \(String(describing: firObj.episode ?? ""))"
                     
                     let lblSeries = UILabel.init(frame: CGRect.init(x: 12, y: 40, width: width - 24, height: 30))
-                    lblSeries.text = "Series = \(String(describing: firObj.serires))"
+                    lblSeries.text = "Series = \(String(describing: firObj.serires ?? ""))"
                     
                     stackView.addArrangedSubview(lblId)
                     stackView.addArrangedSubview(lblTitle)
