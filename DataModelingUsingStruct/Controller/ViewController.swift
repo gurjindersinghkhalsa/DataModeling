@@ -7,12 +7,32 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
+class ViewController: UIViewController {
+    
+    private var viewModel: EpisodeViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        callService { (result) in
-            DispatchQueue.main.async {
+        self.callAPIUpdate()
+    }
+        
+    fileprivate func callAPIUpdate() {
+        self.viewModel = EpisodeViewModel()
+        self.viewModel.callAPI(callBack: { result in
+            self.updateUI(result: result)
+        })
+        /* Second way to call API
+        self.viewModel.callApi()
+        self.viewModel.bindEpisodeViewModelToController = {
+            self.updateUI(result: self.viewModel.data!)
+        }*/
+    }
+    
+    fileprivate func updateUI(result: Result<[EpisodeModel],NetworkError>) {
+        DispatchQueue.main.async {
+            switch result {
+            case .success(let result):
                 if let firObj = result.first {
                     let width = UIScreen.main.bounds.size.width
                     let stackView = UIStackView.init(frame: CGRect.init(x: 12, y: 50, width: width-24, height: 130))
@@ -38,31 +58,10 @@ class ViewController: UIViewController {
                     stackView.addArrangedSubview(lblSeries)
                     self.view.addSubview(stackView)
                 }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
-        // Do any additional setup after loading the view.
-    }
-    
-    func callService(completionHandler: @escaping((_ model: [EpisodeModel])-> Void)) {
-        var urlReq = URLRequest.init(url: URL(string: "https://breakingbadapi.com/api/episodes")!)
-        urlReq.httpMethod = "Get"
-        urlReq.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        let session = URLSession.shared
-        session.dataTask(with: urlReq) { (data, response, error) in
-            if let error = error {
-              print("Error with fetching films: \(error)")
-              return
-            }
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
-                print("Error with the response, unexpected status code: \(String(describing: response))")
-              return
-            }
-            if let data = data,
-               let episodeModel = try? JSONDecoder().decode([EpisodeModel].self, from: data) {
-                completionHandler(episodeModel)
-            }
-        }.resume()
     }
 
 }

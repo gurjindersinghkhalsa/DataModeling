@@ -6,6 +6,9 @@
 //
 
 import Foundation
+
+// MARK: - Episode
+
 struct EpisodeModel: Codable {
     let id:Int?
     let title: String?

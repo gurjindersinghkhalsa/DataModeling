@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28B402D82669352F002F8921 /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B402D72669352F002F8921 /* EpisodeViewModel.swift */; };
+		28B402DD26693696002F8921 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B402DC26693696002F8921 /* APIService.swift */; };
+		28B403022669435B002F8921 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B403012669435B002F8921 /* APIManager.swift */; };
 		28E1265C2651493D007A49B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1265B2651493D007A49B5 /* AppDelegate.swift */; };
 		28E1265E2651493D007A49B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1265D2651493D007A49B5 /* SceneDelegate.swift */; };
 		28E126602651493D007A49B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E1265F2651493D007A49B5 /* ViewController.swift */; };
@@ -36,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28B402D72669352F002F8921 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
+		28B402DC26693696002F8921 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		28B403012669435B002F8921 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		28E126582651493D007A49B5 /* DataModelingUsingStruct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataModelingUsingStruct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		28E1265B2651493D007A49B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		28E1265D2651493D007A49B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28B402D3266934C1002F8921 /* NetworkCall */ = {
+			isa = PBXGroup;
+			children = (
+				28B402DC26693696002F8921 /* APIService.swift */,
+			);
+			path = NetworkCall;
+			sourceTree = "<group>";
+		};
+		28B402D4266934D8002F8921 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				28B402D72669352F002F8921 /* EpisodeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		28B402D5266934EA002F8921 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				28E1265F2651493D007A49B5 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		28B402D626693504002F8921 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				28E1268E2651498C007A49B5 /* EpisodeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		28B402E126693F34002F8921 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				28E1265B2651493D007A49B5 /* AppDelegate.swift */,
+				28E1265D2651493D007A49B5 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		28B403002669434C002F8921 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				28B403012669435B002F8921 /* APIManager.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		28E1264F2651493C007A49B5 = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +156,12 @@
 		28E1265A2651493D007A49B5 /* DataModelingUsingStruct */ = {
 			isa = PBXGroup;
 			children = (
-				28E1265B2651493D007A49B5 /* AppDelegate.swift */,
-				28E1268E2651498C007A49B5 /* EpisodeModel.swift */,
-				28E1265D2651493D007A49B5 /* SceneDelegate.swift */,
-				28E1265F2651493D007A49B5 /* ViewController.swift */,
+				28B402E126693F34002F8921 /* AppDelegate */,
+				28B402D626693504002F8921 /* Models */,
+				28B402D4266934D8002F8921 /* ViewModel */,
+				28B402D5266934EA002F8921 /* Controller */,
+				28B402D3266934C1002F8921 /* NetworkCall */,
+				28B403002669434C002F8921 /* Common */,
 				28E126612651493D007A49B5 /* Main.storyboard */,
 				28E126642651493D007A49B5 /* Assets.xcassets */,
 				28E126662651493D007A49B5 /* LaunchScreen.storyboard */,
@@ -264,7 +321,10 @@
 				28E126602651493D007A49B5 /* ViewController.swift in Sources */,
 				28E1265C2651493D007A49B5 /* AppDelegate.swift in Sources */,
 				28E1265E2651493D007A49B5 /* SceneDelegate.swift in Sources */,
+				28B402D82669352F002F8921 /* EpisodeViewModel.swift in Sources */,
+				28B402DD26693696002F8921 /* APIService.swift in Sources */,
 				28E1268F2651498C007A49B5 /* EpisodeModel.swift in Sources */,
+				28B403022669435B002F8921 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
