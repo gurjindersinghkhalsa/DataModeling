@@ -11,14 +11,22 @@ enum NetworkError: Error {
     case badURL
 }
 
+enum HttpMethod: String {
+    case get
+    case post
+    case put
+    case patch
+    case delete
+}
 
-class APIService {
+public final class APIService {
     static let sharedInstance = APIService()
+    private init(){}
     
     let sourceURL = "https://breakingbadapi.com/api/episodes"
     func callService(completionHandler: @escaping (Result<[EpisodeModel], NetworkError>)->Void) {
         var urlReq = URLRequest.init(url: URL(string: sourceURL)!)
-        urlReq.httpMethod = "Get"
+        urlReq.httpMethod = HttpMethod.get.rawValue
         urlReq.addValue("application/json", forHTTPHeaderField: "Content-Type")
         let session = URLSession.shared
         session.dataTask(with: urlReq) { (data, response, error) in

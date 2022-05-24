@@ -8,19 +8,25 @@
 import Foundation
 
 class EpisodeViewModel: BaseNetwork {
-   
-   // var bindEpisodeViewModelToController: (()->()) = {}
-    var data: (Result<[EpisodeModel], NetworkError>)?
-    func callAPI(callBack: @escaping (Result<[EpisodeModel],NetworkError>)->Void) {
+    
+    var items: Observable<[EpisodeModel]> = Observable([])
+    func callAPI() {
         self.apiManagerSharedInstance()?.callService(completionHandler: { (result) in
-            callBack(result)
+            switch result {
+            case .success(let model):
+                self.items.value = model
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
         })
     }
-    
-//    func callApi() {
-//        self.apiManagerSharedInstance()?.callService(completionHandler: { (result) in
-//            self.data = result
-//            self.bindEpisodeViewModelToController()
-//        })
-//    }
+    /*
+    var bindEpisodeViewModelToController: (()->()) = {}
+    var data: (Result<[EpisodeModel], NetworkError>)?
+    func callApi() {
+        self.apiManagerSharedInstance()?.callService(completionHandler: { (result) in
+            self.data = result
+            self.bindEpisodeViewModelToController()
+        })
+    } */
 }

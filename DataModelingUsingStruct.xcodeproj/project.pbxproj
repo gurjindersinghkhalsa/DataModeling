@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D05C61283D3BD10006B90B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D05C60283D3BD10006B90B /* Observable.swift */; };
 		28B402D82669352F002F8921 /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B402D72669352F002F8921 /* EpisodeViewModel.swift */; };
 		28B402DD26693696002F8921 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B402DC26693696002F8921 /* APIService.swift */; };
 		28B403022669435B002F8921 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B403012669435B002F8921 /* APIManager.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18D05C60283D3BD10006B90B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		28B402D72669352F002F8921 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
 		28B402DC26693696002F8921 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		28B403012669435B002F8921 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				28B403012669435B002F8921 /* APIManager.swift */,
+				18D05C60283D3BD10006B90B /* Observable.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D05C61283D3BD10006B90B /* Observable.swift in Sources */,
 				28E126602651493D007A49B5 /* ViewController.swift in Sources */,
 				28E1265C2651493D007A49B5 /* AppDelegate.swift in Sources */,
 				28E1265E2651493D007A49B5 /* SceneDelegate.swift in Sources */,
